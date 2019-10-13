@@ -10,6 +10,3 @@ fi
 version=$1
 
 curl -fSL https://releases.hashicorp.com/terraform/${version}/terraform_${version}_darwin_amd64.zip | tar xz -C $( dirname "${BASH_SOURCE[0]}" )
-
-#--strip-components=1 darwin-amd64/helm
-
