@@ -1,0 +1,14 @@
+#!/bin/bash
+# Funny git commit messages
+
+while [ 1 ]
+do
+msg=$(curl -s whatthecommit.com|\grep '<p>'|sed 's/<p>//g')
+echo -e "Commit with '\033[1;33m${msg}\033[0m' ? (Y/n)"
+read input
+if [[ "$input" == "Y" || "$input" == "y" ]];
+then
+    git commit -m "$msg"
+    exit
+fi
+done
