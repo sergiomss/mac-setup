@@ -22,11 +22,11 @@ step "Changing shell to zsh"
 
 # Install brew bundles
 step "Installing Homebrew bundle"
-#brew bundle --file="$MAC_SETUP_DIR/Brewfile"
+brew bundle --file="$MAC_SETUP_DIR/Brewfile"
 
 # Tweak the hell out of macOS settings
 step "Tweaking macOS config settings (takes a while)"
-#"$MAC_SETUP_DIR/lib/macos.sh"
+"$MAC_SETUP_DIR/lib/macos.sh"
 
 step "Installing powerlevel10k zsh custom theme"
 test -d ~/.oh-my-zsh/custom/themes/powerlevel10k || git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
