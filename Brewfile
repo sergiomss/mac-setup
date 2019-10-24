@@ -27,6 +27,7 @@ brew "yarn"
 brew "awscli"
 brew "ctags"
 brew "gnupg"
+brew "docker-machine-driver-vmware"
 
 # brew "terraform"
 # brew "kubernetes-cli"
