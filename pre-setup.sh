@@ -45,17 +45,24 @@ fi
 step "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-step "Setting hostnames to 'w'"
-if [[ $(scutil --get HostName) != "w" ]]; then
-  scutil --get HostName "w"
-fi
+step "Setting hostnames"
+printf "Insert hostname (ENTER to skip): "
+read hostname
+if [[ -z "$hostname" ]]; then
+  echo "skipping..."
+else
+  echo "Setting hostname to '$hostname'"
+  if [[ $(scutil --get HostName) != "$hostname" ]]; then
+    scutil --get HostName "$hostname"
+  fi
 
-if [[ $(scutil --get LocalHostName) != "w" ]]; then
-  scutil --get LocalHostName "w"
-fi
+  if [[ $(scutil --get LocalHostName) != "$hostname" ]]; then
+    scutil --get LocalHostName "$hostname"
+  fi
 
-if [[ $(scutil --get ComputerName) != "w" ]]; then
-  scutil --set ComputerName "w"
+  if [[ $(scutil --get ComputerName) != "$hostname" ]]; then
+    scutil --set ComputerName "$hostname"
+  fi
 fi
 
 # Install iterm2
@@ -63,3 +70,7 @@ step "Installing iterm2"
 brew cask install "iterm2"
 
 echo "${GREEN}✔ ${WHITE}${BOLD}Done!${NC} 🎉"
+
+if [[ $TERM_PROGRAM != "iTerm.app" ]]; then
+  open -a iTerm
+fi 
