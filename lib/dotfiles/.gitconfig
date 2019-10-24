@@ -31,6 +31,7 @@
 
 [push]
   default = current
+  followTags = true
 
 [core]
   editor        = vim
