@@ -16,10 +16,6 @@ step() {
 # Ask for the administrator password upfront
 sudo -v
 
-# Change the shell
-step "Changing shell to zsh"
-"$MAC_SETUP_DIR/lib/shell.sh"
-
 # Install brew bundles
 step "Installing Homebrew bundle"
 brew bundle --file="$MAC_SETUP_DIR/Brewfile"

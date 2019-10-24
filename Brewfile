@@ -1,4 +1,3 @@
-brew "zsh"
 brew "vim"
 brew "tmux"
 brew "git"

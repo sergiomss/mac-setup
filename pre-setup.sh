@@ -41,6 +41,14 @@ if ! type brew > /dev/null; then
       https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# Install zsh
+step "Installing zsh"
+brew install zsh
+
+# Change the shell
+step "Changing shell to zsh"
+"$MAC_SETUP_DIR/lib/shell.sh"
+
 # Install oh-my-zsh
 step "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -73,4 +81,4 @@ echo "${GREEN}✔ ${WHITE}${BOLD}Done!${NC} 🎉"
 
 if [[ $TERM_PROGRAM != "iTerm.app" ]]; then
   open -a iTerm
-fi 
+fi
