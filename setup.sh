@@ -40,8 +40,12 @@ cp -ivL ~/.p10k.zsh $MAC_SETUP_DIR/backup/.p10k.zsh.old
 
 step "Adding symlinks to dot files"
 cp -ivL $MAC_SETUP_DIR/lib/dotfiles/.gitconfig ~/.gitconfig
-ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/.zshrc ~/.zshrc
-ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/.p10k.zsh ~/.p10k.zsh
+mkdir -p $HOME/.zsh
+ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/.zshenv ~/.zshenv
+ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.p10k.zsh ~/.zsh/.p10k.zsh
+ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshrc ~/.zsh/.zshrc
+ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshlocal ~/.zsh/.zshlocal
+ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshenv ~/.zsh/.zshenv
 
 step "Setting up git email"
 if [ -z "$(git config user.email)" ]; then

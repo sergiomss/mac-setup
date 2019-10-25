@@ -47,7 +47,7 @@ setopt pushd_to_home            # `pushd` = `pushd $HOME`
 ##
 # History
 ##
-HISTFILE=~/.zsh_history         # where to store zsh config
+HISTFILE=~/.zsh/.zsh_history    # where to store zsh config
 HISTSIZE=1024                   # big history
 SAVEHIST=1024                   # big history
 setopt append_history           # append
@@ -82,17 +82,12 @@ print -Pn "\e]0; %n@%M: %~\a"   # terminal title
 
 source $ZSH/oh-my-zsh.sh
 
-##
-# heimdall
-##
-export AWS_PROFILE=heimdall
-
 # extra settings
-[[ -f ~/.zshlocal ]] && source ~/.zshlocal
-[[ -f ~/.zshrc.env ]] && source ~/.zshrc.env
+[[ -f $ZDOTDIR/.zshlocal ]] && source $ZDOTDIR/.zshlocal
+[[ -f $ZDOTDIR/.zshenv ]] && source $ZDOTDIR/.zshenv
 
 # powerlevel10k theme
 #ZSH_THEME=powerlevel10k/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh

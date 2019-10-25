@@ -2,12 +2,11 @@
 # Aliases
 ##
 
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Always enable colored `grep` output
@@ -26,8 +25,8 @@ alias stfu="osascript -e 'set volume output muted true'"                        
 alias pumpitup="osascript -e 'set volume output volume 100'"
 alias reload="exec ${SHELL} -l"                                                   # Reload the shell (i.e. invoke as a login shell)
 alias path='echo -e ${PATH//:/\\n}'                                               # Print each PATH entry on a separate line
-alias k=kubectl                                                                   # kubernetes
-alias g=git                                                                       # git
+# alias k=kubectl                                                                   # kubernetes
+# alias g=git                                                                       # git
 alias watch='watch '                                                              # make aliases work with 'watch'
 
 # Kill all the tabs in Chrome to free up memory
@@ -36,27 +35,24 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 ##
 # Golang
 ##
-export GOPATH="$HOME/develop/go"                                                  # gopath
-export GOROOT="$(brew --prefix golang)/libexec"                                   # goroot
+# export GOPATH="$HOME/develop/go"                                                  # gopath
+# export GOROOT="$(brew --prefix golang)/libexec"                                   # goroot
 
-##
-# Node
-##
-export NODE_PATH=/usr/local/lib/node_modules                                      # node_path
 
 ##
 # Path
 ##
-PATH+=":${GOPATH}/bin:${GOROOT}/bin"                                              # add gopath to path
-PATH+=":/usr/local/share/npm/bin"                                                 # add npm bin to path
-PATH+=":${HOME}/.bin"                                                             # custom scripts bin
-PATH+=":${HOME}/bin";                                                             #
-PATH+=":/usr/local/sbin";                                                         # do I need this?
-PATH+=":/usr/local/bin";                                                          # add brew bin to path
-PATH+=":$(python -m site --user-site)";                                           # python
-PATH+=":${HOME}/Library/Python/2.7/bin"                                           # more python
+# PATH+=":${GOPATH}/bin:${GOROOT}/bin"                                              # add gopath to path
+# PATH+=":/usr/local/share/npm/bin"                                                 # add npm bin to path
+# PATH+=":${HOME}/.bin"                                                             # custom scripts bin
+# PATH+=":${HOME}/bin";                                                             #
+# PATH+=":/usr/local/sbin";                                                         # do I need this?
+# PATH+=":/usr/local/bin";                                                          # add brew bin to path
+# PATH+=":$(python -m site --user-site)";                                           # python
+# PATH+=":${HOME}/Library/Python/2.7/bin"                                           # more python
 
 export PATH;
+
 
 ##
 # Functions
