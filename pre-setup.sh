@@ -61,11 +61,11 @@ if [[ -z "$hostname" ]]; then
 else
   echo "Setting hostname to '$hostname'"
   if [[ $(scutil --get HostName) != "$hostname" ]]; then
-    scutil --get HostName "$hostname"
+    scutil --set HostName "$hostname"
   fi
 
   if [[ $(scutil --get LocalHostName) != "$hostname" ]]; then
-    scutil --get LocalHostName "$hostname"
+    scutil --set LocalHostName "$hostname"
   fi
 
   if [[ $(scutil --get ComputerName) != "$hostname" ]]; then
