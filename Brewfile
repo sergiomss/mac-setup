@@ -44,7 +44,6 @@ cask "visual-studio-code"
 cask "minikube"
 cask "skype"
 cask "vmware-fusion"
-cask "jotta"
 
 tap "homebrew/cask-fonts"
 cask "font-source-code-pro"

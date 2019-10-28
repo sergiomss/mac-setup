@@ -2,16 +2,7 @@
 
 MAC_SETUP_DIR="$HOME/mac-setup"
 
-BOLD="\033[1m"
-WHITE="\033[0;37m"
-YELLOW="\033[1;33m"
-GREEN="\033[1;32m"
-NC="\033[0m"
-
-step() {
-  echo
-  echo "${YELLOW}❯❯❯ ${WHITE}${BOLD}$1${NC} ${YELLOW}❮❮❮${NC}"
-}
+source $MAC_SETUP_DIR/lib/print.sh
 
 # Ask for the administrator password upfront
 sudo -v
@@ -35,8 +26,9 @@ test -d ~/.oh-my-zsh/custom/plugins/alias-tips || git clone https://github.com/d
 step "Backing up existing dot files"
 mkdir -p $MAC_SETUP_DIR/backup
 cp -ivL ~/.gitconfig $MAC_SETUP_DIR/backup/.gitconfig.old
-cp -ivL ~/.zshrc $MAC_SETUP_DIR/backup/.zshrc.old
-cp -ivL ~/.p10k.zsh $MAC_SETUP_DIR/backup/.p10k.zsh.old
+cp -ivL ~/.zsh/.p10k.zsh $MAC_SETUP_DIR/backup/.p10k.zsh.old
+cp -ivL ~/.zsh/.zshrc $MAC_SETUP_DIR/backup/.zshrc.old
+cp -ivL ~/.zsh/.zshenv $MAC_SETUP_DIR/backup/.zshenv.old
 
 step "Adding symlinks to dot files"
 cp -ivL $MAC_SETUP_DIR/lib/dotfiles/.gitconfig ~/.gitconfig
@@ -44,7 +36,6 @@ mkdir -p $HOME/.zsh
 ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/.zshenv ~/.zshenv
 ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.p10k.zsh ~/.zsh/.p10k.zsh
 ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshrc ~/.zsh/.zshrc
-ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshlocal ~/.zsh/.zshlocal
 ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshenv ~/.zsh/.zshenv
 
 step "Setting up git email"
@@ -61,4 +52,4 @@ for script in bin/*; do
 done;
 
 step "Remove backups with 'rm -ir $MAC_SETUP_DIR/.*.old'"
-echo "${GREEN}✔ ${WHITE}${BOLD}Done!${NC} 🎉"
+finish

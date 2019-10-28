@@ -26,7 +26,6 @@ autoload -U compinit
 compinit
 zmodload -i zsh/complist
 setopt hash_list_all            # hash everything before completion
-#setopt complete_aliases          # complete alisases
 setopt always_to_end            # when completing from the middle of a word, move the cursor to the end of the word
 setopt complete_in_word         # allow completion from within a word/phrase
 setopt correct                  # spelling correction for commands
@@ -82,12 +81,56 @@ print -Pn "\e]0; %n@%M: %~\a"   # terminal title
 
 source $ZSH/oh-my-zsh.sh
 
-# extra settings
+##
+# Extra Settings
+##
 [[ -f $ZDOTDIR/.zshlocal ]] && source $ZDOTDIR/.zshlocal
 [[ -f $ZDOTDIR/.zshenv ]] && source $ZDOTDIR/.zshenv
 
+##
 # powerlevel10k theme
-#ZSH_THEME=powerlevel10k/powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+##
 source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f $ZDOTDIR/.p10k.zsh ]] && source $ZDOTDIR/.p10k.zsh
+
+##
+# Aliases
+##
+
+# Easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+# Always enable colored `grep` output
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ls="command ls ${colorflag}"                                                # Always use color output for `ls`
+alias sudo='sudo '                                                                # Enable aliases to be sudo’ed
+alias week='date +%V'                                                             # Get week number
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'     # Google Chrome
+alias c="tr -d '\n' | pbcopy"                                                     # Trim new lines and copy to clipboard
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"                     # Recursively delete `.DS_Store` files
+alias stfu="osascript -e 'set volume output muted true'"                          # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias pumpitup="osascript -e 'set volume output volume 100'"
+alias reload="exec ${SHELL} -l"                                                   # Reload the shell (i.e. invoke as a login shell)
+alias path='echo -e ${PATH//:/\\n}'                                               # Print each PATH entry on a separate line
+alias watch='watch '                                                              # make aliases work with 'watch'
+
+# Kill all the tabs in Chrome to free up memory
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+##
+# Functions
+##
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != *"nothing to commit"* ]] && echo "*"
+}
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
