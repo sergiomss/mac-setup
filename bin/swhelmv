@@ -7,6 +7,15 @@ if [ $# -lt 1 ]; then
     echo "usage: $0 VERSION" 1>&2
     exit 1
 fi
+
 version=$1
 
-curl -fSL https://storage.googleapis.com/kubernetes-helm/helm-v${version}-darwin-amd64.tar.gz | tar xz -C $( dirname "${BASH_SOURCE[0]}" ) --strip-components=1 darwin-amd64/helm
+[[ $version =~ ^[0-9]+ ]] && version_short="${BASH_REMATCH[0]}"
+
+if [[ $version_short == 3 ]]; then
+  curl -fsL https://get.helm.sh/helm-v3.0.0-darwin-amd64.tar.gz | tar xz -C $( dirname "${BASH_SOURCE[0]}" )  --strip-components=1 darwin-amd64/helm
+else
+  curl -fsL https://storage.googleapis.com/kubernetes-helm/helm-v${version}-darwin-amd64.tar.gz | tar xz -C $( dirname "${BASH_SOURCE[0]}" ) --strip-components=1 darwin-amd64/helm
+fi
+
+chmod +x $( dirname "${BASH_SOURCE[0]}" )/kubectl

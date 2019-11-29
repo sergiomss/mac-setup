@@ -46,37 +46,37 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
-      status                  # exit code of the last command
-      command_execution_time  # duration of the last command
-      background_jobs         # presence of background jobs
-      virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-      # anaconda              # conda environment (https://conda.io/)
-      # pyenv                 # python environment (https://github.com/pyenv/pyenv)
-      # nodenv                # node.js version from nodenv (https://github.com/nodenv/nodenv)
-      # nvm                   # node.js version from nvm (https://github.com/nvm-sh/nvm)
-      # nodeenv               # node.js environment (https://github.com/ekalinin/nodeenv)
-      # node_version          # node.js version
-      # go_version            # go version (https://golang.org)
-      # rust_version          # rustc version (https://www.rust-lang.org)
-      # dotnet_version        # .NET version (https://dotnet.microsoft.com)
-      # rbenv                 # ruby version from rbenv (https://github.com/rbenv/rbenv)
-      # rvm                   # ruby version from rvm (https://rvm.io)
-      # kubecontext           # current kubernetes context (https://kubernetes.io/)
-      terraform               # terraform workspace (https://www.terraform.io)
-      aws                   # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-      # context               # user@hostname
-      # nordvpn               # nordvpn connection status, linux only (https://nordvpn.com/)
-      # ranger                # ranger shell (https://github.com/ranger/ranger)
-      # vpn_ip                # virtual private network indicator
-      # ram                   # free RAM
-      # load                  # CPU load
-      # time                  # current time
+      # status                  # exit code of the last command
+      # command_execution_time  # duration of the last command
+      # background_jobs         # presence of background jobs
+      # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+      # anaconda                # conda environment (https://conda.io/)
+      # pyenv                   # python environment (https://github.com/pyenv/pyenv)
+      # nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
+      # nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
+      # nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
+      # node_version            # node.js version
+      # go_version              # go version (https://golang.org)
+      # rust_version            # rustc version (https://www.rust-lang.org)
+      # dotnet_version          # .NET version (https://dotnet.microsoft.com)
+      # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
+      # rvm                     # ruby version from rvm (https://rvm.io)
+      # kubecontext             # current kubernetes context (https://kubernetes.io/)
+      # terraform               # terraform workspace (https://www.terraform.io)
+      # aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+      # context                 # user@hostname
+      # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
+      # ranger                  # ranger shell (https://github.com/ranger/ranger)
+      # vpn_ip                  # virtual private network indicator
+      # ram                     # free RAM
+      # load                    # CPU load
+      # time                    # current time
       # =========================[ Line #2 ]=========================
       newline
-      # public_ip             # public IP address
-      # proxy                 # system-wide http/https/ftp proxy
-      # battery               # internal battery
-      # example               # example user-defined segment (see prompt_example function below)
+      # public_ip               # public IP address
+      # proxy                   # system-wide http/https/ftp proxy
+      # battery                 # internal battery
+      # example                 # example user-defined segment (see prompt_example function below)
   )
 
   # Basic style options that define the overall look of your prompt. You probably don't want to

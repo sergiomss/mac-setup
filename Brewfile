@@ -9,7 +9,6 @@ brew "watch"
 brew "gpg"
 brew "coreutils"
 brew "rsync"
-brew "thefuck"
 
 brew "go"
 brew "python"
