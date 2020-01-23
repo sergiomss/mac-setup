@@ -1,0 +1,14 @@
+#!/bin/bash
+# Switch terraform version
+
+set -euo pipefail
+
+if [ $# -lt 1 ]; then
+    echo "usage: $0 VERSION" 1>&2
+    exit 1
+fi
+version=$1
+
+curl -fSL https://storage.googleapis.com/kubernetes-release/release/v${version}/bin/darwin/amd64/kubectl -o $( dirname "${BASH_SOURCE[0]}" )/kubectl
+chmod +x $( dirname "${BASH_SOURCE[0]}" )/kubectl
+

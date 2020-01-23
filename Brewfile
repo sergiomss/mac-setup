@@ -43,6 +43,8 @@ cask "visual-studio-code"
 cask "minikube"
 cask "skype"
 cask "vmware-fusion"
+cask "osxfuse"
+brew "datawire/blackbird/telepresence"
 
 tap "homebrew/cask-fonts"
 cask "font-source-code-pro"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 MAC_SETUP_DIR="$HOME/mac-setup"
 source $MAC_SETUP_DIR/lib/print.sh
@@ -146,12 +146,22 @@ install_zsh_plugins(){
 }
 
 dotfiles(){
+	step "checking Vundle"
+	if [[ ! -f "$HOME/.vim/bundle/Vundle.vim" ]]; then
+		step "installing Vundle"
+		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	else 
+		step "Vundle already installed"
+	fi 
+
+
 	step "Backing up existing dot files"
 	mkdir -p $MAC_SETUP_DIR/backup
 	cp -ivL ~/.gitconfig $MAC_SETUP_DIR/backup/.gitconfig.old
 	cp -ivL ~/.zsh/.p10k.zsh $MAC_SETUP_DIR/backup/.p10k.zsh.old
 	cp -ivL ~/.zsh/.zshrc $MAC_SETUP_DIR/backup/.zshrc.old
 	cp -ivL ~/.zsh/.zshenv $MAC_SETUP_DIR/backup/.zshenv.old
+	cp -ivL ~/.vimrc $MAC_SETUP_DIR/backup/.vimrc.old
 
 	step "Adding symlinks to dot files"
 	cp -ivL $MAC_SETUP_DIR/lib/dotfiles/.gitconfig ~/.gitconfig
@@ -160,6 +170,7 @@ dotfiles(){
 	ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.p10k.zsh ~/.zsh/.p10k.zsh
 	ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshrc ~/.zsh/.zshrc
 	ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/zsh/.zshenv ~/.zsh/.zshenv
+	ln -sfnv $MAC_SETUP_DIR/lib/dotfiles/.vimrc ~/.vimrc
 
 	step "Setting up git email"
 	if [ -z "$(git config user.email)" ]; then
