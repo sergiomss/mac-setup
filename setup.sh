@@ -206,10 +206,10 @@ show_menus() {
 	clear
 	title "mac setup scripts"
 	menu_item "0" " all"
-	menu_item "1" " ssh key"
-	menu_item "2" " homebrew"
-	menu_item "3" " zsh and oh-my-zsh"
-	menu_item "4" " hostname and computer name"
+	menu_item "1" " hostname and computer name"
+	menu_item "2" " ssh key"
+	menu_item "3" " homebrew"
+	menu_item "4" " zsh and oh-my-zsh"
 	menu_item "5" " iterm2"
 	menu_item "6" " brew formulas from bundle"
 	menu_item "7" " macOS configs"
@@ -227,10 +227,10 @@ read_options(){
 	for choice in $choices; do
 		case $choice in
 			0) title "all" && setup_all && pause ;;
-			1) title "ssh key" && verify_ssh_key && pause ;;
-			2) title "homebrew" && homebrew && pause ;;
-			3) title "zsh and oh-my-zsh" && install_zsh && pause ;;
-			4) title "hostname and computer name" && hostnames && pause ;;
+			1) title "hostname and computer name" && hostnames && pause ;;
+			2) title "ssh key" && verify_ssh_key && pause ;;
+			3) title "homebrew" && homebrew && pause ;;
+			4) title "zsh and oh-my-zsh" && install_zsh && pause ;;
 			5) title "iterm2" && iterm2 && pause ;;
 			6) title "brew formulas from bundle" && brew_bundle && pause ;;
 			7) title "macOS configs" && config_macos && pause ;;
