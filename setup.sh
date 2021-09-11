@@ -92,7 +92,7 @@ hostnames(){
 
 iterm2(){
 	step "Installing iterm2"
-	brew cask install "iterm2"
+	brew install "iterm2" --cask
 
 	finish
 }
