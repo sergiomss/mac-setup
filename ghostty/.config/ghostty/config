@@ -1,0 +1,32 @@
+# Window appearance - hide title bar and corners
+macos-titlebar-style = "hidden"
+
+# Background transparency (80% opacity = 20% transparency)
+background-opacity = 0.80
+
+# Window padding (Ghostty uses individual padding settings)
+window-padding-x = 25
+window-padding-y = 25
+
+# Font configuration
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
+
+# Window font settings
+window-inherit-font-size = false
+window-title-font-family = "JetBrainsMono Nerd Font Mono"
+
+# Font ligatures (Ghostty enables by default, but being explicit)
+font-feature = "+liga"
+
+# Shell integration - disable cursor integration
+shell-integration-features = "no-cursor"
+
+# theme configuration file "catppuccin-mocha.conf"
+theme = "catppuccin-mocha.conf"
+
+keybind = super+k=text:\x02\x4b
+keybind = super+j=text:\x02\x4a
+keybind = super+a=text:\x02\x41
+keybind = super+r=text:\x02\x52
+keybind = super+l=text:\x02L

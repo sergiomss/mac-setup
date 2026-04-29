@@ -1,0 +1,5 @@
+[tools]
+go = "latest"
+kubectl = "latest"
+node = "latest"
+terraform = "latest"

@@ -1,0 +1,27 @@
+# XDG setup
+XDG_DATA_HOME=${HOME}/.local/share
+XDG_CONFIG_HOME=${HOME}/.config
+XDG_STATE_HOME=${HOME}/.local/state
+XDG_CACHE_HOME=${HOME}/.cache
+XDG_RUNTIME_DIR=/run/user/501
+
+# AWS vars
+AWS_SHARED_CREDENTIALS_FILE=${XDG_CONFIG_HOME}/aws/credentials
+AWS_CONFIG_FILE=${XDG_CONFIG_HOME}/aws/config
+
+# ZSH vars
+ZSH=${XDG_DATA_HOME}/oh-my-zsh
+ZDOTDIR=${ZDOTDIR:=${XDG_CONFIG_HOME}/zsh}
+HISTFILE=${XDG_CONFIG_HOME}/zsh/.zsh_history
+UPDATE_ZSH_DAYS=1
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ohmyzsh"
+COMPLETION_WAITING_DOTS=true
+
+# Go vars
+GOPATH="$XDG_DATA_HOME"/go
+
+# NPM vars.
+NPM_CONFIG_USERCONFIG=${XDG_CONFIG_HOME}/.config/npm/npmrc
+
+# PATH
+PATH=$PATH:/opt/homebrew/bin

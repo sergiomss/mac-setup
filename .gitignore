@@ -15,3 +15,6 @@ Thumbs.db
 
 .idea/
 backup/
+rustup/
+git/.config/git/work-git.config
+git/.config/git/personal-git.config

@@ -1,0 +1,17 @@
+[credential]
+	helper = osxkeychain
+
+# user specific configuration
+[include]
+	path = ~/.config/git/work-git.config
+[includeIf "gitdir:~/develop/personal/"]
+  path = ~/.config/git/personal-git.config
+
+# configuration for all repositories
+[submodule]
+	recurse = true
+[pull]
+	rebase = true
+[push]
+  default = current
+  followTags = true
