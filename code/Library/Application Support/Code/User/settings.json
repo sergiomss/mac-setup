@@ -1,0 +1,83 @@
+{
+  "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+  "editor.fontFamily": "CaskaydiaCove NF",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 25,
+  "editor.letterSpacing": 0.7,
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false, // removes minimap
+  "editor.renderWhitespace": "none", // removes indent guides
+  "editor.renderLineHighlight": "none", // removes line highlight
+  "editor.overviewRulerBorder": false, // removes border from overview ruler (located on the right, same position as the scrollbar)
+  "editor.hideCursorInOverviewRuler": true, // hides cursor mark in the overview ruler
+  "editor.folding": false, // removes the folding feature
+  "editor.occurrencesHighlight": "off", // removes highlights occurrences (still works when you select a word)
+  "editor.matchBrackets": "near", // removes the highlight of matching brackets (I use Subtle Match Brackets extension for this)
+  "editor.glyphMargin": true, // removes the space used mainly for debugging indicators
+  "explorer.openEditors.visible": 1, // removes the activity bar (the 4 icons at the left of the screen), so now you will have to open the explorer, git, debugger and extension with shortcuts or through the Command Palette
+  "workbench.editor.showIcons": false, // removes icon from opened files in tabs
+  "workbench.editor.tabCloseButton": "off", // removes cross icon from tabs
+  "workbench.statusBar.visible": false, // removes the status bar
+  "indenticator.color.dark": "rgba(255,255,255,.1)", // adds a subtle indent guide (needs Indenticator extension)
+  "workbench.colorCustomizations": { // object that allows you to customize your color theme: https://code.visualstudio.com/docs/getstarted/theme-color-reference 
+    "tab.activeBorder": "#0000" // removes border to highlight active tabs (the colors formats are: #RGB, #RGBA, #RRGGBB or #RRGGBBAA)
+  },
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorWidth": 2,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.lineDecorationsWidth": 25,
+  "workbench.sideBar.location": "right",
+  "projectManager.git.baseFolders": [
+    "$home/develop/github/"
+  ],
+  "projectManager.sortList": "Recent",
+  // we try to make semantic highlighting look good
+  "editor.semanticHighlighting.enabled": true,
+  // prevent VSCode from modifying the terminal colors
+  "terminal.integrated.minimumContrastRatio": 1,
+  // make the window's titlebar use the workbench colors
+  "window.titleBarStyle": "custom",
+  "window.title": " ",
+  "explorer.excludeGitIgnore": false,
+  // applicable if you use Go, this is an opt-in flag!
+  "gopls": {
+    "ui.semanticTokens": true,
+  },
+  // use Mocha as the base
+  "workbench.colorTheme": "Catppuccin Mocha",
+  // pink as the accent color
+  "catppuccin.accentColor": "pink",
+  // use your accent (pink) on the statusBar as well
+  "catppuccin.customUIColors": {
+    "mocha": {
+      "statusBar.foreground": "accent",
+    },
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.activityBar.location": "top",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.tabActionCloseVisibility": false,
+  "editor.guides.indentation": false,
+  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "workspace",
+  "go.alternateTools": {
+    "go": "/opt/homebrew/bin/go"
+  },
+  "extensions.ignoreRecommendations": true,
+  "terraform.experimentalFeatures.prefillRequiredFields": true,
+  "terraform.codelens.referenceCount": true,
+  "terraform.experimentalFeatures.validateOnSave": true,
+  "terraform.languageServer.terraform.path": "~/.local/share/mise/installs/terraform/1.10.5/bin/terraform",
+  "terraform.languageServer.path": "/opt/homebrew/bin/terraform-ls",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "claudeCode.selectedModel": "haiku",
+  "claudeCode.preferredLocation": "panel",
+  "go.toolsManagement.autoUpdate": true,
+  "http.systemCertificatesNode": true,
+}
