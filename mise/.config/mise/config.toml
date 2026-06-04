@@ -1,5 +1,5 @@
 [tools]
-go = "latest"
-kubectl = "latest"
-node = "latest"
-terraform = "latest"
+go = "1.26.0"
+kubectl = "1.36.1"
+node = "v26"
+terraform = "1.15.5"

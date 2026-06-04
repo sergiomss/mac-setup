@@ -50,4 +50,5 @@ export LESSHISTFILE="$XDG_STATE_HOME"/less/history
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH="$PATH:$(npm config get prefix)/bin"
-. "$XDG_DATA_HOME/cargo/env"
+
+[ -f "$XDG_DATA_HOME/cargo/env" ] && . "$XDG_DATA_HOME/cargo/env"
