@@ -1,5 +1,6 @@
 [tools]
 go = "1.26.0"
+helm = "latest"
 kubectl = "1.36.1"
 node = "v26"
 terraform = "1.15.5"

@@ -1,29 +1,18 @@
-# brew "jotta/cli/jotta-cli"
+
 brew "vim"
 brew "tmux"
 brew "git"
-
 brew "tree"
 brew "wget"
 brew "gpg"
-
 brew "coreutils"
 brew "rsync"
-
 brew "go"
 brew "rustup"
 brew "python"
 brew "node"
-
-brew "sergiomss/homebrew-tap/ks"
-# brew "aws-iam-authenticator"
-# brew "awscli"
 brew "ctags"
 brew "gnupg"
-# brew "docker-machine-driver-vmware"
-# brew "kreuzwerker/taps/m1-terraform-provider-helper"
-brew "Azure/kubelogin/kubelogin"
-
 brew "fzf"
 brew "asdf"
 brew "jq"
@@ -36,26 +25,26 @@ brew "gcc"
 brew "make"
 brew "watch"
 brew "goreleaser"
-
 brew "stern"
 brew "k9s"
-brew "mage"
 brew "mise"
-
-# zsh setup
 brew "starship"
 brew "zoxide"
 brew "bat"
 brew "eza"
 brew "dust"
 brew "btop"
-brew "joshmedeski/sesh/sesh"
-brew "FelixKratz/formulae/borders"
 brew "lazygit"
 brew "lazydocker"
 brew "fastfetch"
 brew "gum"
 brew "azure-cli"
+
+brew "Azure/kubelogin/kubelogin"
+brew "joshmedeski/sesh/sesh"
+brew "FelixKratz/formulae/borders"
+brew "sergiomss/homebrew-tap/ks"
+brew "homeport/tap/dyff"
 # brew "koekeishiya/formulae/skhd"
 
 # Casks
@@ -80,8 +69,11 @@ cask "google-chrome"
 cask "slack"
 cask "claude"
 cask "notion"
-
 cask "visual-studio-code"
+cask "backdrop"
+cask "contexts"
+cask "font-monaspace"
+
 vscode "github.copilot-chat"
 vscode "golang.go"
 vscode "hashicorp.terraform"
@@ -92,8 +84,6 @@ vscode "alefragnani.project-manager"
 vscode "tamasfe.even-better-toml"
 vscode "anthropic.claude-code"
 vscode "saoudrizwan.claude-dev"
-vscode "Google.geminicodeassist"
-
 # markdown qol
 vscode "yzhang.markdown-all-in-one"
 vscode "ms-vscode.wordcount"

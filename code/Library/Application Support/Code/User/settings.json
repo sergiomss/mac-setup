@@ -31,10 +31,17 @@
   "editor.formatOnSave": true,
   "editor.lineDecorationsWidth": 25,
   "workbench.sideBar.location": "right",
-  "projectManager.git.baseFolders": [
+  "projectManager.any.baseFolders": [
     "$home/develop/github/"
   ],
+  "projectManager.any.maxDepthRecursion": 2,
+  "projectManager.any.ignoredFolders": [
+    "node_modules",
+    ".git",
+    "**/.git"
+  ],
   "projectManager.sortList": "Recent",
+  "projectManager.removeCurrentProjectFromList": true,
   // we try to make semantic highlighting look good
   "editor.semanticHighlighting.enabled": true,
   // prevent VSCode from modifying the terminal colors
